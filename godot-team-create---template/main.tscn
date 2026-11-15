@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://b8y4x6c1m7q2p"]
+
+[node name="Main" type="Node3D" unique_id=1916379528]
+metadata/scene_file_path = "res://main.tscn"
+metadata/_tc_uuid = "7852051496950016983"
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=429039944]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 4, 0)
+shadow_enabled = true
+metadata/_tc_uuid = "8157725433125551019"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=53426674]
+metadata/_tc_uuid = "6939437901255658532"
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=939114818]
+transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 2, 4)
+current = true
+metadata/_tc_uuid = "1489485142052165635"
+
+[node name="WelcomeUI" type="Control" parent="." unique_id=1675633686]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_tc_uuid = "5966434537943261879"
+
+[node name="CenterContainer" type="CenterContainer" parent="WelcomeUI" unique_id=1243026728]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_tc_uuid = "1583024085747460288"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WelcomeUI/CenterContainer" unique_id=1354958498]
+layout_mode = 2
+theme_override_constants/separation = 12
+metadata/_tc_uuid = "5965179695568934047"
+
+[node name="Title" type="Label" parent="WelcomeUI/CenterContainer/VBoxContainer" unique_id=1264415464]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Godot Team Create Template"
+horizontal_alignment = 1
+metadata/_tc_uuid = "5609013458777490805"
+
+[node name="Subtitle" type="Label" parent="WelcomeUI/CenterContainer/VBoxContainer" unique_id=1323297475]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.75, 0.75, 0.75, 1)
+theme_override_font_sizes/font_size = 15
+text = "Real-time collaborative game development in Godot 4!
+Open the 'Team Create' dock on the left to Host LAN or Join a session."
+horizontal_alignment = 1
+metadata/_tc_uuid = "3419709058305802645"
