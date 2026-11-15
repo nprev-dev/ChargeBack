@@ -1,0 +1,223 @@
+[gd_scene format=3 uid="uid://ceuq4e4b76iqx"]
+
+[ext_resource type="Texture2D" uid="uid://dgwp3igiqmy2d" path="res://soccer-field-background-vector.jpg" id="1_wtcfe"]
+[ext_resource type="Texture2D" uid="uid://b3xb6rw5plkgw" path="res://red.png" id="2_0hol4"]
+[ext_resource type="Script" uid="uid://d1wuhogodk8xw" path="res://blue_player.gd" id="2_epypp"]
+[ext_resource type="Script" uid="uid://bv1ggeydjlt2r" path="res://red_player.gd" id="2_q6r6c"]
+[ext_resource type="Texture2D" uid="uid://d0vji7m62vss8" path="res://blue.png" id="3_0hol4"]
+[ext_resource type="Texture2D" uid="uid://b8dytrsntmt8j" path="res://Aim.png" id="4_ir8iy"]
+[ext_resource type="Script" uid="uid://57kcut26mxfe" path="res://left_goal.gd" id="6_4d7sh"]
+[ext_resource type="Script" uid="uid://cm6ib1fuugd8v" path="res://ball.gd" id="6_d21ai"]
+[ext_resource type="Script" uid="uid://bsynevgpe52rq" path="res://right_goal.gd" id="7_ir8iy"]
+[ext_resource type="Texture2D" uid="uid://cxn4uxapc3nwl" path="res://ball/Ball.png" id="7_rj586"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o23qf"]
+size = Vector2(67.290146, 101.78359)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m0cq3"]
+size = Vector2(63.586983, 101.678276)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sra8w"]
+size = Vector2(1169.5, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lo4wj"]
+size = Vector2(1222.125, 47.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jtuf3"]
+size = Vector2(36, 265)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kielh"]
+size = Vector2(35, 264.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hid3w"]
+size = Vector2(20, 99)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rkc3y"]
+size = Vector2(41, 267)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uex8a"]
+size = Vector2(126.5, 274)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ea8pp"]
+size = Vector2(20, 90)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j0suv"]
+size = Vector2(24, 74)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w5v5u"]
+size = Vector2(23, 77)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_barrier"]
+size = Vector2(20, 100)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p0ony"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o23qf"]
+radius = 19.235384
+
+[node name="Node2D" type="Node2D" unique_id=341091443]
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="." unique_id=809539990]
+position = Vector2(-51, 18)
+scale = Vector2(1.53, 1.4)
+
+[node name="Sprite2D" type="Sprite2D" parent="BackBufferCopy" unique_id=997221402]
+texture_filter = 1
+position = Vector2(407.18954, 220.71426)
+scale = Vector2(1.0060899, 1.0374635)
+texture = ExtResource("1_wtcfe")
+
+[node name="Red Player" type="CharacterBody2D" parent="." unique_id=165750337]
+position = Vector2(292, 347)
+collision_layer = 2
+script = ExtResource("2_q6r6c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Red Player" unique_id=748626475]
+scale = Vector2(0.534997, 0.62878495)
+shape = SubResource("RectangleShape2D_o23qf")
+one_way_collision_margin = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Red Player" unique_id=272708501]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("2_0hol4")
+vframes = 4
+
+[node name="AimPivot" type="Node2D" parent="Red Player" unique_id=139344429]
+
+[node name="Sprite2D" type="Sprite2D" parent="Red Player/AimPivot" unique_id=388172190]
+texture_filter = 1
+position = Vector2(50, 0)
+scale = Vector2(3, 3)
+skew = 0.7853982
+texture = ExtResource("4_ir8iy")
+
+[node name="Blue Player" type="CharacterBody2D" parent="." unique_id=1533097258]
+position = Vector2(877, 353)
+collision_layer = 2
+script = ExtResource("2_epypp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blue Player" unique_id=344133734]
+position = Vector2(1, 0)
+scale = Vector2(0.5347004, 0.6294363)
+shape = SubResource("RectangleShape2D_m0cq3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Blue Player" unique_id=1843976718]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("3_0hol4")
+vframes = 4
+
+[node name="AimPivot" type="Node2D" parent="Blue Player" unique_id=626570402]
+
+[node name="Sprite2D" type="Sprite2D" parent="Blue Player/AimPivot" unique_id=1977755989]
+texture_filter = 1
+position = Vector2(50, 0)
+scale = Vector2(3, 3)
+skew = 0.7853982
+texture = ExtResource("4_ir8iy")
+
+[node name="Walls" type="StaticBody2D" parent="." unique_id=973619700]
+position = Vector2(-80, 112)
+disable_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls" unique_id=574956223]
+position = Vector2(673, -105)
+shape = SubResource("RectangleShape2D_sra8w")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls" unique_id=402112882]
+position = Vector2(658, 545)
+shape = SubResource("RectangleShape2D_lo4wj")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls" unique_id=1800698968]
+position = Vector2(144, 389)
+shape = SubResource("RectangleShape2D_jtuf3")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls" unique_id=1443260254]
+position = Vector2(145, 40)
+shape = SubResource("RectangleShape2D_kielh")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Walls" unique_id=1259111334]
+position = Vector2(121, 212)
+shape = SubResource("RectangleShape2D_hid3w")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Walls" unique_id=209756460]
+position = Vector2(1165, 38)
+shape = SubResource("RectangleShape2D_rkc3y")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Walls" unique_id=1978807836]
+position = Vector2(1207, 394)
+shape = SubResource("RectangleShape2D_uex8a")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Walls" unique_id=1506311379]
+position = Vector2(1185, 215)
+shape = SubResource("RectangleShape2D_ea8pp")
+
+[node name="Left goal" type="Area2D" parent="." unique_id=630269529]
+script = ExtResource("6_4d7sh")
+
+[node name="Leftgoal" type="CollisionShape2D" parent="Left goal" unique_id=428803674]
+position = Vector2(69, 326)
+shape = SubResource("RectangleShape2D_j0suv")
+
+[node name="Right goal" type="Area2D" parent="." unique_id=1655263569]
+script = ExtResource("7_ir8iy")
+
+[node name="Rightgoal" type="CollisionShape2D" parent="Right goal" unique_id=74114747]
+position = Vector2(1077.5, 326.5)
+shape = SubResource("RectangleShape2D_w5v5u")
+
+[node name="LeftBarrier" type="StaticBody2D" parent="." unique_id=1402558131]
+position = Vector2(95, 326)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftBarrier" unique_id=1402558132]
+shape = SubResource("RectangleShape2D_barrier")
+
+[node name="RightBarrier" type="StaticBody2D" parent="." unique_id=1402558133]
+position = Vector2(1052, 326)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightBarrier" unique_id=1402558134]
+shape = SubResource("RectangleShape2D_barrier")
+
+[node name="Ball" type="RigidBody2D" parent="." unique_id=1853997140]
+position = Vector2(571, 325)
+collision_mask = 5
+physics_material_override = SubResource("PhysicsMaterial_p0ony")
+gravity_scale = 0.0
+freeze_mode = 1
+contact_monitor = true
+max_contacts_reported = 4
+linear_damp = 0.5
+script = ExtResource("6_d21ai")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ball" unique_id=1851735967]
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("7_rj586")
+hframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball" unique_id=93493757]
+shape = SubResource("CircleShape2D_o23qf")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1625409268]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=352293135]
+visible = false
+offset_left = 170.0
+offset_top = 152.0
+offset_right = 1202.0
+offset_bottom = 439.0
+theme_override_font_sizes/font_size = 40
+text = "GGGGGGOOOOOOOOOAAAAAAALLLLLLLLLL
+GGGGGGOOOOOOOOOAAAAAAALLLLLLLLLL
+GGGGGGOOOOOOOOOAAAAAAALLLLLLLLLL
+GGGGGGOOOOOOOOOAAAAAAALLLLLLLLLL
+GGGGGGOOOOOOOOOAAAAAAALLLLLLLLLL"
+
+[connection signal="body_entered" from="Left goal" to="Left goal" method="_on_body_entered"]
+[connection signal="body_entered" from="Right goal" to="Right goal" method="_on_body_entered"]
+[connection signal="body_entered" from="Ball" to="Ball" method="_on_body_entered"]
